@@ -3,4 +3,7 @@ project(1437)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(1437 main.cpp)
+add_executable(1437 main.cpp
+        utils.h
+        structDemos.h
+        structDemos.cpp)
