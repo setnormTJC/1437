@@ -16,4 +16,6 @@ struct Person
 
 std::vector<Person> readPeopleDataIntoArray(const std::string& filename);
 
+float calculateAverageAge(const std::vector<Person>& people);
+
 void demoSimpleStructThing(); //function declaration

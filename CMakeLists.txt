@@ -6,4 +6,6 @@ set(CMAKE_CXX_STANDARD 20)
 add_executable(1437 main.cpp
         utils.h
         structDemos.h
-        structDemos.cpp)
+        structDemos.cpp
+        readDictionary.cpp
+        readDictionary.h)

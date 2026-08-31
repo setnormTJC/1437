@@ -38,12 +38,30 @@ std::vector<Person> readPeopleDataIntoArray(const std::string& filename)
 
     while (!fin.eof())
     {
-        Person currentPerson;
+        Person currentPerson; //Computer Org. And Architecture
 
-        fin >> currentPerson.name >> currentPerson.age >> currentPerson.isAlive;
+        fin >> currentPerson.name;
+        fin >> currentPerson.age;
+        fin >> currentPerson.isAlive;
 
         people.push_back(currentPerson);
     }
 
     fin.close(); //always close the file (in case, for example, coworkers access that file later, mid-program execution
+
+    return people;
+}
+
+float calculateAverageAge(const std::vector<Person> &people)
+{
+    //implement the function!
+    float sumOfAllAges = 0.0f;
+    for (Person currentPerson : people)
+    {
+        sumOfAllAges += currentPerson.age;
+    }
+
+    std::cout << "Sum of all ages: " << sumOfAllAges << "\n";//sanity check (is this a negative number?)
+
+    return sumOfAllAges/people.size();
 }

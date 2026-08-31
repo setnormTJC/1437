@@ -8,6 +8,19 @@
 
 namespace MySpace
 {
+    ///@brief just a very basic example
+    void remindStudentOfHowCinWorks()
+    {
+        std::cout << "Enter your name (an ambiguous prompt):\n";
+        std::string firstName;
+        std::string lastName;
+
+        std::cin >> firstName; //character input getch()
+        std::cin >> lastName;
+
+        std::cout << "You entered firstName " << firstName << " lastName: " << lastName << '\n';
+
+    }
 
     void shuffleStudentNames()
     {
