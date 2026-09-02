@@ -19,7 +19,13 @@ public:
     ///that have the same name as the class name)
     Bigfoot();
 
+    // unsigned int height, const std::string furColor, float shoeSize
+    Bigfoot(unsigned int height, const std::string furColor, float shoeSize);
+
     unsigned int getHeight() const;  //be const-correct!
+
+    void setHeight(int newHeight);
+
 
 };
 
