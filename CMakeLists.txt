@@ -8,4 +8,6 @@ add_executable(1437 main.cpp
         structDemos.h
         structDemos.cpp
         readDictionary.cpp
-        readDictionary.h)
+        readDictionary.h
+        BigFoot.cpp
+        BigFoot.h)
