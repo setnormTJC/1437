@@ -9,6 +9,9 @@
 
 void demoBigStuff()
 {
+
+
+
     Bigfoot bigfoot;
     //std::cout << bigfoot.height << "\n"; //inaccessible!
 
@@ -28,7 +31,16 @@ int main()
 {
     InventoryItem shoes("Altra Olympus 6", 129.99, 10);
 
-    std::cout << shoes.getItemName() << "\n";
+    std::vector<InventoryItem> itemsInStore;
+    itemsInStore.push_back(shoes);
+
+   //in-place creation of InventoryItem
+    itemsInStore.push_back({"Metal tent stakes", 2.75, 999});
+
+    for (int i = 0; i < itemsInStore.size(); ++i)
+    {
+        itemsInStore[i].print();
+    }
 
     return 0;
 }

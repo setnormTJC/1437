@@ -12,4 +12,5 @@ add_executable(1437 main.cpp
         BigFoot.cpp
         BigFoot.h
         InventoryItem.cpp
-        InventoryItem.h)
+        InventoryItem.h
+)

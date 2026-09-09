@@ -4,6 +4,10 @@
 
 #include "InventoryItem.h"
 
+#include <iomanip> //for setw
+#include<iostream> //for cout
+
+
 void InventoryItem::setItemName(const std::string &newItemName)
 {
     itemName = newItemName;
@@ -51,6 +55,18 @@ itemName(itemName), itemPrice(itemPrice), unitsAvailable(unitsAvailable)
 double InventoryItem::calculateTotalValue() const
 {
     return unitsAvailable * itemPrice;
+}
+
+void InventoryItem::print() const
+{
+    const int NAME_COLUMN_WIDTH = 25;
+    const int COUNT_COLUMN_WIDTH = 5;
+    const int COST_COLUMN_WIDTH = 10;
+
+    std::cout << std::left << std::setw(NAME_COLUMN_WIDTH)  << itemName;
+    std::cout << std::left << std::setw(COUNT_COLUMN_WIDTH) << unitsAvailable;
+    std::cout << std::left << std::setw(COST_COLUMN_WIDTH) << itemPrice;
+    std::cout << "\n";
 }
 
 

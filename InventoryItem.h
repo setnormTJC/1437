@@ -32,11 +32,20 @@ public:
     InventoryItem(const std::string& itemName, double itemPrice, int unitsAvailable);
 
     double calculateTotalValue() const;
-    
+
     void print() const;
 
 
 };
+
+
+// class Store
+// {
+//     std::vector<InventoryItem> items; //later -> composition
+//
+//     std::string managerName = "Bob";
+//
+// };
 
 // class CustomDynamicArray//wrapper around std::vector with extra functionality
 
