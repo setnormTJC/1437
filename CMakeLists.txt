@@ -10,4 +10,6 @@ add_executable(1437 main.cpp
         readDictionary.cpp
         readDictionary.h
         BigFoot.cpp
-        BigFoot.h)
+        BigFoot.h
+        InventoryItem.cpp
+        InventoryItem.h)
