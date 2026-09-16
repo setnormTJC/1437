@@ -15,4 +15,6 @@ add_executable(1437 main.cpp
         InventoryItem.h
         RNGWrapper.cpp
         RNGWrapper.h
+        ImageBMP.cpp
+        ImageBMP.h
 )

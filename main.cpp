@@ -3,6 +3,7 @@
 #include<iostream>
 
 #include "Bigfoot.h"
+#include "ImageBMP.h"
 #include "InventoryItem.h"
 #include"RNGWrapper.h"
 #include"readDictionary.h"
@@ -29,15 +30,32 @@ void demoBigStuff()
 
 int main()
 {
-    RNGWrapper rngWrapper;
 
-    int N = 500;
+    // RNGWrapper rngWrapper;
+    //
+    // int N = 500;
+    //
+    // for (int i = 0; i < 500; ++i)
+    // {
+    //     auto result = rngWrapper.getRandomNumberBetween0AndN(N);
+    //     std::cout << result << " ";
+    // }
 
-    for (int i = 0; i < 500; ++i)
+    int imageWidth = 400;
+    ImageBMP imageBMP(imageWidth, 600, ColorEnum::RedBgrd);
+
+    for (int x = 1; x < imageWidth/2; ++x)
     {
-        auto result = rngWrapper.getRandomNumberBetween0AndN(N);
-        std::cout << result << " ";
+        imageBMP.pixelData.pixelMatrix[x][50] = ColorEnum::Cyan;
     }
+
+    std::string filename = "aGLORIOUSimage.bmp";
+
+    imageBMP.writeImageFile("aGLORIOUSimage.bmp");
+
+    std::system(filename.c_str());
+
+
 
 
 
