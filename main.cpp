@@ -1,16 +1,16 @@
 
 
+#include<iostream>
 
 #include "Bigfoot.h"
 #include "InventoryItem.h"
+#include"RNGWrapper.h"
 #include"readDictionary.h"
 #include"structDemos.h"
 #include"utils.h"
 
 void demoBigStuff()
 {
-
-
 
     Bigfoot bigfoot;
     //std::cout << bigfoot.height << "\n"; //inaccessible!
@@ -29,18 +29,18 @@ void demoBigStuff()
 
 int main()
 {
-    InventoryItem shoes("Altra Olympus 6", 129.99, 10);
+    RNGWrapper rngWrapper;
 
-    std::vector<InventoryItem> itemsInStore;
-    itemsInStore.push_back(shoes);
+    int N = 500;
 
-   //in-place creation of InventoryItem
-    itemsInStore.push_back({"Metal tent stakes", 2.75, 999});
-
-    for (int i = 0; i < itemsInStore.size(); ++i)
+    for (int i = 0; i < 500; ++i)
     {
-        itemsInStore[i].print();
+        auto result = rngWrapper.getRandomNumberBetween0AndN(N);
+        std::cout << result << " ";
     }
+
+
+
 
     return 0;
 }

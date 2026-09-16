@@ -13,4 +13,6 @@ add_executable(1437 main.cpp
         BigFoot.h
         InventoryItem.cpp
         InventoryItem.h
+        RNGWrapper.cpp
+        RNGWrapper.h
 )
