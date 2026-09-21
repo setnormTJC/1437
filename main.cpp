@@ -1,5 +1,6 @@
 
 
+#include<filesystem>
 #include<iostream>
 
 #include "Bigfoot.h"
@@ -67,26 +68,21 @@ void demoBigStuff()
 
 int main()
 {
-    // std::string someString("a", 8);
+    std::filesystem::directory_iterator directoryIterator("."); //parameterized constructor of the
+    //directory_iteratory class (inside the filesystem namespace)
 
-    // std::cout << someString << "\n";
-
-    std::vector<int> nums = {1, 2, 3, 4};
-
-    auto startTime = std::chrono::high_resolution_clock::now();
-
-    for (int i = 0; i < 10'000'000; ++i)
+    for (const auto& directoryEntry : directoryIterator)
     {
-        //do nothing
+        if (directoryEntry.path().string().find(".txt") != std::string::npos)
+        {
+            //std::cout << directoryEntry.path() << "\n";
+
+            // std::cout << directoryEntry.file_size() << "\n";
+
+            //directoryEntry.
+        }
+
     }
-
-    auto stopTime = std::chrono::high_resolution_clock::now();
-
-    std::cout << "That loop took this many NANOseconds "
-        << (stopTime - startTime).count() << "\n";
-
-    //std::filesystem
-
     return 0;
 }
 

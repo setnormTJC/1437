@@ -18,4 +18,6 @@ add_executable(1437 main.cpp
         ImageBMP.cpp
         ImageBMP.h
         demos.h
+        CustomerOrder.cpp
+        CustomerOrder.h
 )

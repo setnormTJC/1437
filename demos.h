@@ -50,3 +50,27 @@ void demoMapDataStructure()
 
 }
 
+
+void demoStdChrono()
+{
+    std::string someString();
+
+    // std::cout << someString << "\n";
+
+    std::vector<int> nums = {1, 2, 3, 4};
+
+    auto startTime = std::chrono::high_resolution_clock::now();
+
+    for (int i = 0; i < 10'000'000; ++i)
+    {
+        //do nothing
+    }
+
+    auto stopTime = std::chrono::high_resolution_clock::now();
+
+    std::cout << "That loop took this many NANOseconds "
+        << (stopTime - startTime).count() << "\n";
+
+    //std::filesystem
+
+}
