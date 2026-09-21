@@ -17,4 +17,5 @@ add_executable(1437 main.cpp
         RNGWrapper.h
         ImageBMP.cpp
         ImageBMP.h
+        demos.h
 )

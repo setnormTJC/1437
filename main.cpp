@@ -10,6 +10,43 @@
 #include"structDemos.h"
 #include"utils.h"
 
+#include<thread> //for parallel processing
+
+class Car
+{
+    std::string make = "Ford";
+    int numberOfMiles = 99'999;
+
+    //int someNumber = INT_MAX + 1; //overflows!
+
+    Car() = default;
+    // Car(/*insert params here*/)
+    // {
+    //
+    // }
+
+    ///@brief based on car's make and mileage, estimates a USD value
+    double calculateCarValue()
+    {
+        double value = 0.0;
+
+        if (make == "Toyota")
+        {
+            value += 3'000;
+        }
+
+        else if (make == "Ford")
+        {
+            value += 500;
+        }
+
+        return value;
+    }
+
+};
+
+
+
 void demoBigStuff()
 {
 
@@ -30,35 +67,25 @@ void demoBigStuff()
 
 int main()
 {
+    // std::string someString("a", 8);
 
-    // RNGWrapper rngWrapper;
-    //
-    // int N = 500;
-    //
-    // for (int i = 0; i < 500; ++i)
-    // {
-    //     auto result = rngWrapper.getRandomNumberBetween0AndN(N);
-    //     std::cout << result << " ";
-    // }
+    // std::cout << someString << "\n";
 
-    int imageWidth = 400;
-    ImageBMP imageBMP(imageWidth, 600, ColorEnum::RedBgrd);
+    std::vector<int> nums = {1, 2, 3, 4};
 
-    for (int x = 1; x < imageWidth/2; ++x)
+    auto startTime = std::chrono::high_resolution_clock::now();
+
+    for (int i = 0; i < 10'000'000; ++i)
     {
-        imageBMP.pixelData.pixelMatrix[x][50] = ColorEnum::Cyan;
+        //do nothing
     }
 
-    std::string filename = "aGLORIOUSimage.bmp";
+    auto stopTime = std::chrono::high_resolution_clock::now();
 
-    imageBMP.writeImageFile("aGLORIOUSimage.bmp");
+    std::cout << "That loop took this many NANOseconds "
+        << (stopTime - startTime).count() << "\n";
 
-    std::system(filename.c_str());
-
-
-
-
-
+    //std::filesystem
 
     return 0;
 }
